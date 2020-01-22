@@ -85,3 +85,6 @@ In `package.json`, add a build script:
  ### 13. Add the main.js in experiment.html
  Add `<script src="build/main.js"></script>` under the body tag. Remove original script tags.
  Open `experiment.html`
+ 
+ ### 14. Add git ignore
+ `touch .gitignore` ignoring `node_modules/` and `build/`
