@@ -1,5 +1,3 @@
-import blue from '../img/blue.png';
-import orange from '../img/orange.png';
 import jsPsych from '../jspsych-6.1.0/jspsych';
 import htmlKeyboardResponse from '../jspsych-6.1.0/plugins/jspsych-html-keyboard-response';
 import imageKeyboardResponse from '../jspsych-6.1.0/plugins/jspsych-image-keyboard-response';
@@ -35,8 +33,8 @@ timeline.push(instructions);
 
 /* test trials */
 const test_stimuli = [
-  { stimulus: blue, data: { test_part: 'test', correct_response: 'f' } },
-  { stimulus: orange, data: { test_part: 'test', correct_response: 'j' } },
+  { stimulus: "img/blue.png", data: { test_part: 'test', correct_response: 'f' } },
+  { stimulus: "img/orange.png", data: { test_part: 'test', correct_response: 'j' } },
 ];
 
 const fixation = {
