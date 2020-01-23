@@ -1,3 +1,5 @@
+# Basic Version
+
 ### 1. Download latest version of jsPsych
 jsPsych releases: https://github.com/jspsych/jsPsych/releases
 
@@ -88,3 +90,8 @@ In `package.json`, add a build script:
  
  ### 14. Add git ignore
  `touch .gitignore` ignoring `node_modules/` and `build/`
+ 
+ # React Version
+ 
+ ### 1. Create boilerplate
+ Run ```npx create-react-app your-app-name-here```
