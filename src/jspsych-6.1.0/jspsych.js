@@ -37,9 +37,9 @@ const jsPsych = (function() {
   // of jsPsych
   core.webaudio_context = null;
   // temporary patch for Safari
-  // if (typeof window !== 'undefined' && window.hasOwnProperty('webkitAudioContext') && !window.hasOwnProperty('AudioContext')) {
-  //   window.AudioContext = webkitAudioContext;
-  // }
+  if (typeof window !== 'undefined' && window.hasOwnProperty('webkitAudioContext') && !window.hasOwnProperty('AudioContext')) {
+    window.AudioContext = window.webkitAudioContext;
+  }
   // end patch
   core.webaudio_context = (typeof window !== 'undefined' && typeof window.AudioContext !== 'undefined') ? new AudioContext() : null;
 
@@ -2720,4 +2720,4 @@ if (!Array.isArray) {
   };
 }
 
-export default jsPsych;
+export default jsPsych
