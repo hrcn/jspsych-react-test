@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import './jspsych-6.1.0/jspsych';
-import './jspsych-6.1.0/plugins/jspsych-html-keyboard-response';
 import Experiment from './Experiment';
 
-class App extends Component {
-  render() {
+const App = () => {
     const hello_trial = {
       type: 'html-keyboard-response',
       stimulus: 'Hello world!'
@@ -16,7 +13,6 @@ class App extends Component {
         <Experiment trial={hello_trial}/>
       </div>
     )
-  }
 }
 
 export default App;
