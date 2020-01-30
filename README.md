@@ -102,4 +102,65 @@ In `package.json`, add a build script:
  # React Version
  
  ### 1. Create boilerplate
- Run ```npx create-react-app your-app-name-here```
+ Run `npx create-react-app your-app-name-here`
+ 
+ ### 2. Files relocation
+ Download and move the latest version of jsPsych folder under the `src` folder
+ jsPsych releases: https://github.com/jspsych/jsPsych/releases
+ 
+ Create a `Experiment.js` under the `src` folder
+
+### 3. Modify plugins
+Add `import jsPsych from ...` to plugin files you are using
+
+### 4. Modify `jsPsych.js`
+Change `window.jsPsych` to `const jsPsych` at the beginning, add `export default jsPsych` at the end.
+
+?Line 40 - 42: `'webkitAudioContext' is not defined`, change it to `window.AudioContext = window.webkitAudioContext;`
+
+?Line 1656: `'turk_info' is not defined`, comment out temporarily
+
+### 5. Build components & pass props to children
+In `Experiment.js`:
+
+```
+import React from 'react';
+
+import jsPsych from './jspsych-6.1.0/jspsych';
+import './jspsych-6.1.0/plugins/jspsych-html-keyboard-response';
+
+const experiment = (props) => {
+    return (
+        <div>
+            {jsPsych.init({timeline: [props.trial]})}
+        </div>
+    );
+};
+
+export default experiment;
+```
+
+In `App.js`:
+
+```
+import React from 'react';
+
+import Experiment from './Experiment';
+
+const App = () => {
+    const hello_trial = {
+      type: 'html-keyboard-response',
+      stimulus: 'Hello world!'
+    }
+
+    return (
+      <div className="App">
+        <Experiment trial={hello_trial}/>
+      </div>
+    )
+}
+
+export default App;
+```
+
+### 6. Run `npm start`
