@@ -7,7 +7,7 @@
  * documentation: docs.jspsych.org
  *
  **/
-
+import jsPsych from '../jspsych';
 
 jsPsych.plugins["image-keyboard-response"] = (function() {
 

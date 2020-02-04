@@ -1,18 +1,9 @@
 import React from 'react';
 
-import Experiment from './Experiment';
+import Experiment from './components/experiment/Experiment';
 
-const App = () => {
-    const hello_trial = {
-      type: 'html-keyboard-response',
-      stimulus: 'Hello world!'
-    }
-
-    return (
-      <div className="App">
-        <Experiment trial={hello_trial}/>
-      </div>
-    )
-}
+const App = () => (
+  <Experiment />
+);
 
 export default App;
