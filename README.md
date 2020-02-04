@@ -164,3 +164,13 @@ export default App;
 ```
 
 ### 6. Run `npm start`
+
+# Other
+
+Put assets in the `public` folder.
+
+Split code into components.
+
+Import css files.
+
+Wrap the returned value in a `<div>` tag.
