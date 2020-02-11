@@ -103,19 +103,16 @@ In `package.json`, add a build script:
  
  # React Version
  
- ### 1. Create boilerplate
- Run `npx create-react-app your-app-name-here`
- 
- ### 2. Files relocation
- Download and move the latest version of jsPsych folder under the `src` folder
- jsPsych releases: https://github.com/jspsych/jsPsych/releases
- 
- Create a `Experiment.js` under the `src` folder
+### 1. Create boilerplate
+Run `npx create-react-app your-app-name-here`
 
+### 2. Download jsPsych
+jsPsych releases: https://github.com/jspsych/jsPsych/releases
+ 
 ### 3. Modify plugins
 Add `import jsPsych from ...` to plugin files you are using
 
-### 4. Modify `jsPsych.js`
+### 4. Modify jsPsych.js
 Change `window.jsPsych` to `const jsPsych` at the beginning, add `export default jsPsych` at the end.
 
 ?Line 40 - 42: `'webkitAudioContext' is not defined`, change it to `window.AudioContext = window.webkitAudioContext;`
@@ -152,14 +149,4 @@ const App = () => <Lex />;
 export default App;
 ```
 
-### 6. Run `npm start`
-
-# Other
-
-Put assets in the `public` folder.
-
-Split code into components.
-
-Import css files.
-
-Wrap the returned value in a `<div>` tag.
+### 6. Run npm start
