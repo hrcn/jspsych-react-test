@@ -1,9 +1,7 @@
 import React from 'react';
 
-import Experiment from './components/experiment/Experiment';
+import Lex from './components/experiment/Lex';
 
-const App = () => (
-  <Experiment />
-);
+const App = () => <Lex />;
 
 export default App;
