@@ -123,23 +123,21 @@ Change `window.jsPsych` to `const jsPsych` at the beginning, add `export default
 ?Line 1656: `'turk_info' is not defined`, comment out temporarily
 
 ### 5. Build components & pass props to children
-In `Experiment.js`:
+In `Lex.js`:
 
 ```
 import React from 'react';
 
-import jsPsych from './jspsych-6.1.0/jspsych';
-import './jspsych-6.1.0/plugins/jspsych-html-keyboard-response';
+import jsPsych from '../../jspsych-6.1.0/jspsych';
+import Timeline from '../timelines/Timeline';
 
-const experiment = (props) => {
-    return (
-        <div>
-            {jsPsych.init({timeline: [props.trial]})}
-        </div>
-    );
-};
+import '../../jspsych-6.1.0/jspsych.css';
 
-export default experiment;
+import '../../jspsych-6.1.0/plugins/jspsych-html-keyboard-response';
+
+const Lex = () => <div>{jsPsych.init({ timeline: Timeline })}</div>;
+
+export default Lex;
 ```
 
 In `App.js`:
@@ -147,20 +145,9 @@ In `App.js`:
 ```
 import React from 'react';
 
-import Experiment from './Experiment';
+import Lex from './components/experiment/Lex';
 
-const App = () => {
-    const hello_trial = {
-      type: 'html-keyboard-response',
-      stimulus: 'Hello world!'
-    }
-
-    return (
-      <div className="App">
-        <Experiment trial={hello_trial}/>
-      </div>
-    )
-}
+const App = () => <Lex />;
 
 export default App;
 ```
